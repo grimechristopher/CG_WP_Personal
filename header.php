@@ -23,7 +23,7 @@
 <body <?php body_class(); ?> >
     <header class="site-header d-flex flex-column">
         <nav id="top-nav" class="navbar w-100 px-3 py-1 position-fixed">
-            <img src="icon.png" height="64" width="64" class="navbar-brand">
+            <img src="icon.png" height="64" width="64" class="">
             <h2 class="text-light d-none d-md-block"><?php bloginfo('name'); ?></h2>
             <a href="#" class="btn btn-lg btn-outline-light ">Resume</a>
         </nav>

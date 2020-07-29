@@ -6,8 +6,10 @@
         
         <div class="row m-0 w-100 justify-content-center min-vh-50">
             <div class="about d-flex flex-column col-sm-12 col-md-10 col-lg-8 justify-content-around">
-                <h2 class="text-center my-5">Lorem ipsum</h2>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <h2 class="text-center my-5">About</h2>
+<?php while(have_posts()): the_post(); ?>
+    <?php the_content(); ?>
+<?php endwhile; ?>
             </div>
         </div>
 
@@ -25,7 +27,7 @@
 
         <div class="row m-0 w-100 justify-content-center min-vh-50 mb-5">
             <div class="projects d-flex flex-column col-sm-12 col-md-10 col-xl-8 justify-content-around">
-                <h2 class="text-center my-5">Projects</h2>
+                <h2 class="text-center my-5">Personal Projects</h2>
                 <p class="my-5">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                 <div class="d-sm-flex flex-wrap"> 
 <?php
@@ -36,7 +38,7 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <div class="card-img-overlay text-white d-flex flex-column justify-content-around">
                         <h3 class="card-title"><?php print get_the_title(); ?></h3>       
                         <p class="card-text"><?php print get_the_excerpt(); ?></p>   
-                        <a href="<?= get_post_meta($post->ID, 'github-link', true)?>" class="stretched-link btn btn-outline-light">View</a>
+                        <a href="<?= get_post_meta($post->ID, 'github-link', true)?>" class="stretched-link btn btn-outline-light">View on Github</a>
                     </div>
                 </div>
 <?php endwhile; ?>

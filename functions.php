@@ -9,7 +9,7 @@ function add_css() {
 }
 
 function add_js() {
-    wp_enqueue_script( 'jquery_js', get_template_directory_uri().'/js/jquery-3.5.1.min.js');
+    //wp_enqueue_script( 'jquery_js', get_template_directory_uri().'/js/jquery-3.5.1.min.js');
     //wp_enqueue_script( 'themecustomizer_js', get_template_directory_uri().'/js/themecustomizer.js');
     wp_enqueue_script( 'font_awesome', 'https://kit.fontawesome.com/3cff3a2d1d.js');
     wp_enqueue_script( 'main_js', get_template_directory_uri().'/js/main.js');
