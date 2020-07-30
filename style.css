@@ -1,3 +1,12 @@
+/*
+Theme Name: Grime_WP_Personal
+Theme URI: http://www.grimechristopher.com
+Author: Christopher Grime
+Author URI: https://www.grimechristopher.com
+Description: A theme for a wordpress portfolio
+Version: 1
+*/
+
 html {
 	scroll-behavior: smooth;
   }
@@ -10,6 +19,11 @@ html {
 #top-nav {
 	transition: all 0.5s ease-in-out;
 	z-index: 100;
+}
+#nav-bar-title {
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
 }
 header {
 	background-image: radial-gradient(circle, #23a6d5, #0077AA, #0088dd);

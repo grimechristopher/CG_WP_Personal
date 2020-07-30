@@ -24,8 +24,10 @@
     <header class="site-header d-flex flex-column">
         <nav id="top-nav" class="navbar w-100 px-3 py-1 position-fixed">
             <img src="icon.png" height="64" width="64" class="">
-            <h2 class="text-light d-none d-md-block"><?php bloginfo('name'); ?></h2>
-            <a href="#" class="btn btn-lg btn-outline-light ">Resume</a>
+            <h2  id="nav-bar-title" class="text-light d-none d-md-block"><?php bloginfo('name'); ?></h2>
+<?php if( get_theme_mod( 'resume_link_block') != "" ): ?>
+    <a href="<?php echo get_theme_mod( 'resume_link_block'); ?>" class="btn btn-lg btn-outline-light ">Resume</a>
+<?php endif; ?>
         </nav>
 <?php if (display_header_text() == true): ?>
         <div class="jumbotron d-flex flex-column justify-content-center text-center text-light">

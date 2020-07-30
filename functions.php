@@ -94,7 +94,118 @@ add_action( 'init', 'projects_taxonomy');
 
 
 function customizer_options($wp_customize) {
+	$wp_customize->add_section( 'custom_text', array(
+		'priority'       => 500,
+		'title'          => __( 'Custom Text', 'CG_WP_Personal' ),
+		'description'    => __( 'Edit text on certain sections of the page', 'CG_WP_Personal' ),
+    ) );
 
+    $wp_customize->add_setting( 'resume_link_block', array(
+        'default'           => __( '', 'CG_WP_Personal' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( 
+        new WP_Customize_Control(
+            $wp_customize,
+            'resume_link_block',
+            array(
+                'label'    => __( 'Resume Link', 'CG_WP_Personal' ),
+                'section'  => 'custom_text',
+                'settings' => 'resume_link_block',
+                'type'     => 'text'
+            )
+        )
+    );
+    $wp_customize->add_setting( 'email_link_block', array(
+        'default'           => __( '', 'CG_WP_Personal' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( 
+        new WP_Customize_Control(
+            $wp_customize,
+            'email_link_block',
+            array(
+                'label'    => __( 'Email Link', 'CG_WP_Personal' ),
+                'section'  => 'custom_text',
+                'settings' => 'email_link_block',
+                'type'     => 'text'
+            )
+        )
+    );
+    $wp_customize->add_setting( 'linkedin_link_block', array(
+        'default'           => __( '', 'CG_WP_Personal' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( 
+        new WP_Customize_Control(
+            $wp_customize,
+            'linkedin_link_block',
+            array(
+                'label'    => __( 'LinkedIn Link', 'CG_WP_Personal' ),
+                'section'  => 'custom_text',
+                'settings' => 'linkedin_link_block',
+                'type'     => 'text'
+            )
+        )
+    );
+    $wp_customize->add_setting( 'github_link_block', array(
+        'default'           => __( '', 'CG_WP_Personal' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( 
+        new WP_Customize_Control(
+            $wp_customize,
+            'github_link_block',
+            array(
+                'label'    => __( 'GitHub Link', 'CG_WP_Personal' ),
+                'section'  => 'custom_text',
+                'settings' => 'github_link_block',
+                'type'     => 'text'
+            )
+        )
+    );
+
+
+
+    $wp_customize->add_setting( 'contact_text_block', array(
+        'default'           => __( 'default text', 'CG_WP_Personal' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( 
+        new WP_Customize_Control(
+            $wp_customize,
+            'contact_text_block',
+            array(
+                'label'    => __( 'Contact Text', 'CG_WP_Personal' ),
+                'section'  => 'custom_text',
+                'settings' => 'contact_text_block',
+                'type'     => 'textarea'
+            )
+        )
+    );
+
+
+    $wp_customize->add_setting( 'projects_text_block', array(
+        'default'           => __( 'default text', 'CG_WP_Personal' ),
+        'sanitize_callback' => 'sanitize_text'
+   ) );
+   $wp_customize->add_control( 
+        new WP_Customize_Control(
+            $wp_customize,
+            'projects_text_block',
+            array(
+                'label'    => __( 'Projects Text', 'CG_WP_Personal' ),
+                'section'  => 'custom_text',
+                'settings' => 'projects_text_block',
+                'type'     => 'textarea'
+            )
+        )
+    );
+
+
+    function sanitize_text( $text ) {
+	    return sanitize_text_field( $text );
+	}
 }
 
 
@@ -110,5 +221,5 @@ add_action( 'wp_enqueue_scripts', 'add_js');
 add_action( 'widgets_init', 'add_Widget_Support' );
 add_action( 'after_setup_theme', 'custom_header_setup' );
 add_action( 'init', 'add_Main_Nav' );
-// add_action( 'customize_register','customizer_options' );
+add_action( 'customize_register','customizer_options' );
 // add_action( 'wp_head', 'customize_css');

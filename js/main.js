@@ -11,9 +11,13 @@ function scrollFunction() {
     let scrollPosition = Math.round(window.scrollY);
     if (scrollPosition > 0) {
       document.getElementById("top-nav").style.backgroundColor = "#0077AA";
+      document.getElementById("nav-bar-title").style.visibility = "visible";
+      document.getElementById("nav-bar-title").style.opacity = "1";
     }
     else {
       document.getElementById("top-nav").style.backgroundColor = "transparent";
+      document.getElementById("nav-bar-title").style.visibility = "hidden";
+      document.getElementById("nav-bar-title").style.opacity = "0";
     }
 
 } 
