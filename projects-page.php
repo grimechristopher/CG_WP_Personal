@@ -48,7 +48,12 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
                         <div class="card-img-overlay text-white d-flex flex-column justify-content-around">
                             <h3 class="card-title"><?php print get_the_title(); ?></h3>       
                             <p class="card-text"><?php print get_the_excerpt(); ?></p>   
-                            <a href="<?= get_post_meta($post->ID, 'github-link', true)?>" class="stretched-link btn btn-outline-light">View on Github</a>
+<?php if( get_post_meta($post->ID, 'github-link', true) ): ?>
+                            <a href="<?= get_post_meta($post->ID, 'github-link', true)?>" class="btn btn-outline-light">View on Github</a>
+<?php endif; ?>
+<?php if( get_post_meta($post->ID, 'live-link', true) ): ?>
+                            <a href="<?= get_post_meta($post->ID, 'live-link', true)?>" class="btn btn-outline-light">View Demo</a>
+<?php endif; ?>                        
                         </div>
                     </div>
 <?php endwhile; ?>
