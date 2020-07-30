@@ -54,7 +54,7 @@ header {
 	transition: opacity 1s ease;
 }
 .card-text { 
-	height: 45%;
+	height: 50%;
 	overflow: hidden;
 	text-shadow: 2px 1px 8px #000000;
 }
