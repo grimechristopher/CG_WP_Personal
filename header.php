@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>
-    <title><?php bloginfo('name'); ?> || <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
+    <title><?php bloginfo('name'); ?></title>
     
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="description" content="">
+    <meta name="description" content="<?=bloginfo('description')?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
+    <meta property="og:title" content="<?php bloginfo('name'); ?>">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
